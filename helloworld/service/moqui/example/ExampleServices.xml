@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Example & Related Services -->
+    <service verb="create" noun="Example" displayName="Creating an Example" type="entity-auto" allow-remote="true">
+        <in-parameters>
+            <parameter name="exampleName" required="true"/>
+            <parameter name="exampleDate" required="true"/>
+            <parameter name="examplePrice" required="true"/>
+            <parameter name="exampleQuantity" required="true"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="exampleId"  type="id" required="true"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Example" displayName="Update an Example from exampleId" type="entity-auto" allow-remote="true">
+        <in-parameters>
+            <auto-parameters include="pk" required="true"/>
+            <parameter name="exampleName" />
+            <parameter name="exampleDate" />
+            <parameter name="examplePrice" />
+            <parameter name="exampleQuantity" />
+        </in-parameters>
+
+    </service>
+
+</services>
